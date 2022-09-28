@@ -1,24 +1,24 @@
 //1
-// function copy<T>(value: T): T {
-//   let hone: T;
-//   return value;
-// }
-
-// copy<string>("hello");
-
-//2
-// function copy<T>(value: T): T {
-//   return value;
-// }
-
-// copy({ name: "hello" }.name);
-
-//3
-function copy<T extends { name: string }>(value: T): T {
+function copy1<T>(value: T): T {
+  let hone: T;
   return value;
 }
 
-copy({ name: "hello" });
+copy1<string>("hello");
+
+//2
+function copy2<T>(value: T): T {
+  return value;
+}
+
+copy2({ name: "hello" }.name);
+
+//3
+function copy3<T extends { name: string }>(value: T): T {
+  return value;
+}
+
+copy3({ name: "hello" });
 
 type K = keyof { name: string; age: number };
 
@@ -37,8 +37,8 @@ class DataBase<T extends string | number | boolean> {
 
 const stringDataBase = new DataBase<string>();
 stringDataBase.add("apple");
-stringDataBase.add('banana')
-stringDataBase.add('grape')
-stringDataBase.remove('banana')
+stringDataBase.add("banana");
+stringDataBase.add("grape");
+stringDataBase.remove("banana");
 
-console.log(stringDataBase.get())
+console.log(stringDataBase.get());

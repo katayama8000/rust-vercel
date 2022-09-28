@@ -1,91 +1,66 @@
-//1
-// let aaa: boolean = true
-// let bbb: string = "string"
-// let ccc: number = 100
-// let ddd: number = 3.14
-// let eee: number = -1
+let aaa = true;
+let bbb = "string";
+let ccc = 100;
+let ddd: number = 3.14;
+let eee: number = -1;
 
-//2
-// let aaa = true
-// let bbb = "string"
-// let ccc = 100
-// let ddd: number = 3.14
-// let eee: number = -1
+const person: {
+  name: string;
+  age: number;
+} = {
+  name: "jack",
+  age: 20,
+};
 
-//3
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
-//   name: "jack",
-//   age: 20,
-// };
+const fruits: string[] = ["apple", "banana", "grape"];
 
-//4
-//const fruits:string[] = ['apple','banana','grape']
+const book: [string, number, boolean] = ["business", 1500, false];
 
-//5
-//const book:[string,number,boolean] = ['business',1500, false]
+enum CoffeeSize {
+  SHORT,
+  TALL,
+  GRANDE,
+}
 
-//6
-// enum CoffeeSize {
-//     SHORT,
-//     TALL,
-//     GRANDE
-// }
+const coffee = {
+  hot: true,
+  size: CoffeeSize.TALL,
+};
 
-// const coffee = {
-//   hot: true,
-//   size: CoffeeSize.TALL,
-// };
+let unionType: number | string = 10;
+let unionTypes: (number | string)[] = [21, "hello"];
 
-//7
-// let unionType: number | string = 10;
-// let unionTypes: (number | string)[] = [21, "hello"];
+const apple: "apple" = "apple";
+let clothSize: "small" | "medium" | "large" = "large";
 
-//8
-// const apple: 'apple' = 'apple'
-// let clothSize: 'small' | 'medium' | 'large' = 'large'
+type ClothSize = "small" | "medium" | "large";
+let clothSizeNew: ClothSize = "large";
 
-//9
-// type ClothSize = 'small' | 'medium' | 'large'
-// let clothSize: ClothSize = 'large'
+function add1(num1: number, num2: number): number {
+  return num1 + num2;
+}
 
-//10
-// function add(num1: number, num2: number): number {
-//   return num1 + num2;
-// }
+function say(): void {
+  console.log("hello");
+}
 
-//11
-// function say(): void {
-//   console.log("hello");
-// }
+function add2(num1: number, num2: number): number {
+  return num1 + num2;
+}
 
-//12
-// function add(num1: number, num2: number): number {
-//   return num1 + num2;
-// }
+const anotheradd: (na: number, n2: number) => number = add1;
 
-// const anotheradd: (na: number, n2: number) => number = add;
+const doubleNumber: (num: number) => number = (num) => num * 2;
 
-//13
-// const doubleNumber: (num: number) => number = (num) => num * 2;
+function doubleAndHandle(num: number, cb: (num: number) => void): void {
+  const doubleNum = cb(num * 2);
+  console.log(num * 2);
+}
 
-// function doubleAndHandle(num: number, cb: (num: number) => void): void {
-//   const doubleNum = cb(num * 2);
-//   console.log(num * 2);
-// }
+doubleAndHandle(21, (doubleNum) => {
+  return doubleNum;
+});
 
-// doubleAndHandle(21, (doubleNum) => {
-//   return doubleNum;
-// });
-
-//14
-// function error(message: string):never {
-//     throw new Error(message);
-//     // while (true) {
-        
-//     // }
-// }
-
-//
+function error(message: string): never {
+  throw new Error(message);
+}

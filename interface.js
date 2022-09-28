@@ -2,26 +2,22 @@
 const hoge = {
     name: "masaki",
 };
-// interface Human extends Nameable{
-//   age: number;
-//   greeting(message: string): void;
-// }
-// const human: Human = {
-//   name: "masaki",
-//   age: 28,
-//   greeting(message: string) {
-//     console.log(message);
-//   },
-// };
-// class Developer implements Human {
-//   constructor(
-//     public name: string,
-//     public age: number,
-//     public experience: number
-//   ) {}
-//   greeting(message: string) {
-//     console.log("hello");
-//   }
-// }
-// //experienceがなくても指定できる
-// const user:Human = new Developer("masaki",28,3)
+const human = {
+    name: "masaki",
+    age: 28,
+    greeting(message) {
+        console.log(message);
+    },
+};
+class Developer {
+    constructor(name, age, experience) {
+        this.name = name;
+        this.age = age;
+        this.experience = experience;
+    }
+    greeting(message) {
+        console.log("hello");
+    }
+}
+//experienceがなくても指定できる
+const user = new Developer("masaki", 28, 3);
