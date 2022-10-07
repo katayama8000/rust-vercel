@@ -23,8 +23,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const sample1_1 = require("./sample1");
-console.log(sample1_1.name, sample1_1.age);
-const sample1_2 = __importStar(require("./sample1"));
-console.log((0, sample1_2.sayHello)());
-console.log(sample1_2.default);
+const xxx = __importStar(require("./sample1"));
+const age = xxx.age;
+const name = xxx.name;
+console.log(age, name);
+const sample1_1 = __importStar(require("./sample1"));
+console.log((0, sample1_1.sayHello)());
+console.log(sample1_1.default);
+const sample1_2 = require("./sample1");
+const myDog1 = Object.assign({}, sample1_2.dog);
+const myDog2 = {
+    name: "dog",
+    age: 3,
+};
