@@ -17,8 +17,10 @@ const render = (vEl: ReturnType<typeof h>) => {
 };
 
 const app = () => {
-  const card = getCard({ comment: "hello-world" });
-  const card1 = getCard({ comment: "hello-world" });
+  const card = getCard({ comment: "hello" });
+  const card1 = getCard({ comment: "hello" });
+
+  console.log(card);
 
   const renderButton = document.querySelector("#renderButton");
 
@@ -39,5 +41,6 @@ const app = () => {
 const appEl = app();
 
 if (appEl) {
+  console.log(appEl);
   render(appEl);
 }

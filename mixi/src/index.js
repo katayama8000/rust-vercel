@@ -11,8 +11,9 @@ const render = (vEl) => {
     appEl.appendChild(el);
 };
 const app = () => {
-    const card = getCard({ comment: "hello-world" });
-    const card1 = getCard({ comment: "hello-world" });
+    const card = getCard({ comment: "hello" });
+    const card1 = getCard({ comment: "hello" });
+    console.log(card);
     const renderButton = document.querySelector("#renderButton");
     if (!(renderButton instanceof HTMLButtonElement)) {
         return;
@@ -27,5 +28,6 @@ const app = () => {
 };
 const appEl = app();
 if (appEl) {
+    console.log(appEl);
     render(appEl);
 }

@@ -9,7 +9,7 @@ export const h = (tagName: keyof HTMLElementTagNameMap, innerText: string) => {
 export const getElement = ({ tagName, innerText }: ReturnType<typeof h>) => {
   const element = document.createElement(tagName);
   element.innerText = innerText;
-
+  console.log(element, "element");
   return element;
 };
 
@@ -17,19 +17,19 @@ export const shallowEqual = <T extends ReturnType<typeof h>>(
   currentEl: T,
   nextEl: T
 ) => {
-  return currentEl === nextEl;
+  //return currentEl === nextEl;
 
-  // if (currentEl === nextEl) {
-  //   return true;
-  // }
+  if (currentEl === nextEl) {
+    return true;
+  }
 
-  // if (currentEl.tagName !== nextEl.tagName) {
-  //   return false;
-  // }
+  if (currentEl.tagName !== nextEl.tagName) {
+    return false;
+  }
 
-  // if (currentEl.innerText !== nextEl.innerText) {
-  //   return false;
-  // }
+  if (currentEl.innerText !== nextEl.innerText) {
+    return false;
+  }
 
-  // return true;
+  return true;
 };
