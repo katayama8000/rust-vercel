@@ -9,3 +9,13 @@ if (parseInt(text)) {
 } else {
   console.log(parseInt(text), "No");
 }
+
+const obj = {
+  name: "Hello",
+  age: 20,
+  gender: "male",
+} as const;
+
+type ObjType1 = typeof obj;
+type ObjType2 = keyof typeof obj;
+type ObjType3 = typeof obj[keyof typeof obj];
