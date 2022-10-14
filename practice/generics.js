@@ -1,20 +1,22 @@
 "use strict";
 //1
 function copy1(value) {
-    let hone;
     return value;
 }
-copy1("hello");
+const clone1 = copy1("hello");
+const clone2 = copy1({ name: "hello" });
+const clone3 = copy1(2);
+const clone4 = copy1({ name: "hello" }.name);
 //2
 function copy2(value) {
     return value;
 }
-copy2({ name: "hello" }.name);
-//3
-function copy3(value) {
-    return value;
-}
-copy3({ name: "hello" });
+const clone5 = copy2({ name: "hello", age: 20 });
+const clone6 = copy2({
+    name: "hello",
+    age: 20,
+    country: [{ japan: "akita" }, { USA: "NY" }],
+});
 class DataBase {
     constructor() {
         this.data = [];

@@ -1,24 +1,24 @@
 //1
 function copy1<T>(value: T): T {
-  let hone: T;
   return value;
 }
 
-copy1<string>("hello");
+const clone1 = copy1<string>("hello");
+const clone2 = copy1<{ name: "hello" }>({ name: "hello" });
+const clone3 = copy1<number>(2);
+const clone4 = copy1<string>({ name: "hello" }.name);
 
 //2
-function copy2<T>(value: T): T {
+function copy2<T extends { name: string; age: 20 }>(value: T): T {
   return value;
 }
 
-copy2({ name: "hello" }.name);
-
-//3
-function copy3<T extends { name: string }>(value: T): T {
-  return value;
-}
-
-copy3({ name: "hello" });
+const clone5 = copy2({ name: "hello", age: 20 });
+const clone6 = copy2({
+  name: "hello",
+  age: 20,
+  country: [{ japan: "akita" }, { USA: "NY" }],
+});
 
 type K = keyof { name: string; age: number };
 
