@@ -1,0 +1,42 @@
+form {
+  margin: 1rem;
+  display: flex;
+}
+input[type="email"] {
+  font-size: 0.9rem;
+  padding: 0.2em;
+}
+.btn {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  border: none;
+  background: #529fff;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+// モーダルの背景
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+// モーダルウィンドウ
+.modal-content {
+  position: fixed;
+  width: 250px;
+  padding: 1.5em;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+}
