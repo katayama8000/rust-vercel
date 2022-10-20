@@ -19,3 +19,11 @@ type type1 = keyof typeof NAME;
 // => "HOGE" | "FUGA"
 type type2 = typeof NAME[keyof typeof NAME];
 // => "hoge" | "fuga"
+
+const userList = [
+  { hoge: "hoge1", piyo: "piyo1" },
+  { hoge: "hoge2", piyo: "piyo2" },
+  { hoge: "hoge3", piyo: "piyo3" },
+];
+const userSample = userList?.[3]?.hoge ?? "HOGE";
+console.log(userSample); // 何が出るかな？
