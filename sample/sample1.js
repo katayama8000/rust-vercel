@@ -16,4 +16,4 @@ const userList = [
     { hoge: "hoge3", piyo: "piyo3" },
 ];
 const userSample = (_b = (_a = userList === null || userList === void 0 ? void 0 : userList[3]) === null || _a === void 0 ? void 0 : _a.hoge) !== null && _b !== void 0 ? _b : "HOGE";
-console.log(userSample); // 何が出るかな？
+console.log(userSample);

@@ -26,4 +26,4 @@ const userList = [
   { hoge: "hoge3", piyo: "piyo3" },
 ];
 const userSample = userList?.[3]?.hoge ?? "HOGE";
-console.log(userSample); // 何が出るかな？
+console.log(userSample); 
