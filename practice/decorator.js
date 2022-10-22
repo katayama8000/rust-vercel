@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 function Logging(message) {
     return function (constructor) {
-        console.log("Logging");
+        console.log(message);
         console.log(constructor);
     };
 }

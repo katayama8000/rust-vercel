@@ -1,6 +1,6 @@
 function Logging(message: string) {
   return function (constructor: Function) {
-    console.log("Logging");
+    console.log(message);
     console.log(constructor);
   };
 }
