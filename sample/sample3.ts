@@ -5,3 +5,13 @@ if (parseInt(text)) {
 } else {
   console.log(parseInt(text), "No");
 }
+
+const ArrayList = [10, 2, 3, 4, 5];
+
+const initArray = 100;
+const sum: number = ArrayList.reduce((accumulator, currentValue) => {
+  console.log(accumulator, currentValue);
+  return accumulator + currentValue;
+}, initArray);
+
+console.log(sum);
