@@ -32,7 +32,7 @@ class Stack {
 
   // Check if stack is empty
   isEmpty() {
-    console.log(this.count == 0 ? "Stack is empty" : "Stack is NOT empty");
+    console.log(this.count == 0 ? 'Stack is empty' : 'Stack is NOT empty');
     return this.count == 0;
   }
 
@@ -44,9 +44,9 @@ class Stack {
 
   // Print elements in stack
   print() {
-    let str = "";
+    let str = '';
     for (let i = 0; i < this.count; i++) {
-      str += this.items[i] + " ";
+      str += this.items[i] + ' ';
     }
     return str;
   }
@@ -55,7 +55,7 @@ class Stack {
   clear() {
     this.items = [];
     this.count = 0;
-    console.log("Stack cleared..");
+    console.log('Stack cleared..');
     return this.items;
   }
 }
