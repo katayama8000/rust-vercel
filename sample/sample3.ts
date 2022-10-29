@@ -15,3 +15,20 @@ const sum: number = ArrayList.reduce((accumulator, currentValue) => {
 }, initArray);
 
 console.log(sum);
+
+type family = {
+  mother: string;
+  father: string;
+  child: string;
+  grandmother: string;
+  grenfather: string;
+};
+
+// 祖母、祖父を除外
+type myFamily = Omit<family, "grandmother" | "grenfather">;
+
+// 祖母、祖父を追加
+type myFamily2 = {
+  grandmother: string;
+  grenfather: string;
+} & myFamily;
