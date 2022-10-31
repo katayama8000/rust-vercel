@@ -14,18 +14,17 @@ const sum = ArrayList.reduce((accumulator, currentValue) => {
     return accumulator + currentValue;
 }, initArray);
 console.log(sum);
-function confirmed(fn) {
-    const input = window.prompt('Are you sure? (y/n)');
-    fn(input);
-}
-confirmed(function (input) {
-    if (input === 'y') {
-        console.log('OK');
-    }
-    else {
-        console.log('Cancel');
-    }
-});
+// function confirmed(fn: (arg0: string | null) => void) {
+//   const input = window.prompt('Are you sure? (y/n)');
+//   fn(input);
+// }
+// confirmed(function (input) {
+//   if (input === 'y') {
+//     console.log('OK');
+//   } else {
+//     console.log('Cancel');
+//   }
+// });
 // コールバック関数
 // const confirmed1 = (fn: () => void) => {
 //   if (window.confirm('Are you sure? (y/n)')) {
@@ -39,3 +38,12 @@ confirmed(function (input) {
 //   console.log('cancelTweet');
 // };
 // confirmed1(unFollow);
+// ローカルストレージに保存と取得
+localStorage.setItem('name', 'Taro');
+localStorage.setItem('age', '20');
+const getName = () => {
+    const user = localStorage.getItem('name');
+    localStorage.name = 'user';
+    return user;
+};
+console.log(getName());

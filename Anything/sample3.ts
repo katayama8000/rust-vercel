@@ -33,18 +33,18 @@ type myFamily2 = {
   grenfather: string;
 } & myFamily;
 
-function confirmed(fn: (arg0: string | null) => void) {
-  const input = window.prompt('Are you sure? (y/n)');
-  fn(input);
-}
+// function confirmed(fn: (arg0: string | null) => void) {
+//   const input = window.prompt('Are you sure? (y/n)');
+//   fn(input);
+// }
 
-confirmed(function (input) {
-  if (input === 'y') {
-    console.log('OK');
-  } else {
-    console.log('Cancel');
-  }
-});
+// confirmed(function (input) {
+//   if (input === 'y') {
+//     console.log('OK');
+//   } else {
+//     console.log('Cancel');
+//   }
+// });
 
 // コールバック関数
 // const confirmed1 = (fn: () => void) => {
@@ -62,3 +62,16 @@ confirmed(function (input) {
 // };
 
 // confirmed1(unFollow);
+
+// ローカルストレージに保存と取得
+
+localStorage.setItem('name', 'Taro');
+localStorage.setItem('age', '20');
+
+const getName = () => {
+  const user = localStorage.getItem('name');
+  localStorage.name = 'user';
+  return user;
+};
+
+console.log(getName());
