@@ -1,12 +1,12 @@
-const name = "Mike";
+const name = 'Mike';
 const age = 23;
 export { name, age };
 export const sayHello = () => {
-    return "hello";
+    return 'hello';
 };
-export default "default";
+export default 'default';
 const dog = {
-    name: "dog",
+    name: 'dog',
     age: 3,
 };
 export { dog };

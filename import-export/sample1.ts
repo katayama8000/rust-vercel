@@ -1,13 +1,13 @@
-const name = "Mike";
+const name = 'Mike';
 const age = 23;
 
 export { name, age };
 
 export const sayHello = () => {
-  return "hello";
+  return 'hello';
 };
 
-export default "default";
+export default 'default';
 
 type animal = {
   name: string;
@@ -15,7 +15,7 @@ type animal = {
 };
 
 const dog: animal = {
-  name: "dog",
+  name: 'dog',
   age: 3,
 };
 
