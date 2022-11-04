@@ -39,11 +39,4 @@ console.log(sum);
 // };
 // confirmed1(unFollow);
 // ローカルストレージに保存と取得
-localStorage.setItem('name', 'Taro');
-localStorage.setItem('age', '20');
-const getName = () => {
-    const user = localStorage.getItem('name');
-    localStorage.name = 'user';
-    return user;
-};
-console.log(getName());
+
