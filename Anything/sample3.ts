@@ -65,13 +65,52 @@ type myFamily2 = {
 
 // ローカルストレージに保存と取得
 
-localStorage.setItem('name', 'Taro');
-localStorage.setItem('age', '20');
+// localStorage.setItem('name', 'Taro');
+// localStorage.setItem('age', '20');
 
-const getName = () => {
-  const user = localStorage.getItem('name');
-  localStorage.name = 'user';
-  return user;
+// const getName = () => {
+//   const user = localStorage.getItem('name');
+//   localStorage.name = 'user';
+//   return user;
+// };
+
+//console.log(getName());
+
+const isNight = () => {
+  const hour = new Date().getHours();
+  return hour >= 18 || hour <= 6;
 };
 
-console.log(getName());
+// let msg = 'hello'
+// if (isNight()) { msg = 'good evening' }
+
+// 即時関数を使って、letを避ける
+const msg = (() => {
+  if (isNight()) {
+    return 'good evening';
+  }
+  return 'hello';
+})();
+
+if (true) {
+  const msg1 = 'hello';
+  let msg2 = 'hello';
+  var msg3 = 'hello';
+}
+
+// error
+// console.log(msg1);
+// error
+// console.log(msg2);
+// OK
+console.log(msg3);
+
+const user1 = {
+  name: 'Taro',
+  age: 20,
+  height: 170,
+  weight: 60,
+};
+
+console.log(user1['name']);
+console.log(user1.name);
