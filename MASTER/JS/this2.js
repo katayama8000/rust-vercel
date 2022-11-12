@@ -1,3 +1,4 @@
+"use strict";
 class Person {
     constructor(name) {
         this.name = name;
@@ -19,3 +20,4 @@ console.log(Person.prototype, "watching...");
 let person = new Person('John');
 // let button = document.getElementById('button');
 button.addEventListener('click', person, false);
+
