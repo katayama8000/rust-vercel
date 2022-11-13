@@ -79,3 +79,6 @@ const user1 = {
 };
 console.log(user1['name']);
 console.log(user1.name);
+const str = '1 2 3';
+const [A, B, C] = str.split(' ');
+console.log(A, B, C);
