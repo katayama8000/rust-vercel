@@ -3,7 +3,7 @@
 const textInput = document.getElementById('text-input') as HTMLInputElement;
 const todoList = document.getElementById('todo-list') as HTMLUListElement;
 
-textInput!.addEventListener('keydown', (e) => {
+textInput.addEventListener('keydown', (e) => {
   const text = textInput.value.trim();
 
   if (text === '' || e.key !== 'Enter') {

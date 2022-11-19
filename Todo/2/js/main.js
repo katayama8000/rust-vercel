@@ -14,7 +14,7 @@ textInput.addEventListener('keydown', (e) => {
     checkbox.type = 'checkbox';
     checkbox.classList.add('checkbox');
     checkbox.addEventListener('click', () => {
-        li.classList.toggle('checked');
+        span.classList.toggle('checked');
         //checkの場合、削除ボタンは非活性にする
         if (checkbox.checked) {
             button.disabled = true;
