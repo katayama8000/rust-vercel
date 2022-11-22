@@ -82,3 +82,11 @@ console.log(user1.name);
 const str = '1 2 3';
 const [A, B, C] = str.split(' ');
 console.log(A, B, C);
+function countEmailSegments(email) {
+    const [localPart, domain] = email.split('@');
+    console.log(localPart, domain);
+    const [hostname, ...countryCodes] = domain.split('.');
+    console.log(hostname, countryCodes.reduce((a, cc) => a + cc.length, ''));
+    return `${localPart.length}${hostname.length}${countryCodes.reduce((a, cc) => a + cc.length, '')}`;
+}
+console.log(countEmailSegments('tattu.0310@gmail.com'));
