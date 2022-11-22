@@ -61,14 +61,19 @@ const block = {
 // 0：非表示
 // 1：表示
 const level = [
-    [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1],
+    //   [0, 0, 0, 0, 0, 0],
+    //   [0, 0, 0, 0, 0, 0],
+    //   [1, 1, 1, 1, 1, 1],
+    //   [1, 1, 1, 1, 1, 1],
+    //   [1, 1, 1, 1, 1, 1],
+    //   [1, 1, 1, 1, 1, 1],
+    //   [1, 1, 1, 1, 1, 1],
+    //   [1, 1, 1, 1, 1, 1],
+    //   [1, 1, 1, 1, 1, 1],
+    [1],
 ];
 const init = () => {
+    ctx.fillStyle = 'white';
     paddle.x = canvas.width / 2 - paddle.width / 2;
     paddle.y = canvas.height - paddle.height;
     ball.x = canvas.width / 2;
@@ -92,6 +97,16 @@ const init = () => {
 };
 // 当たり判定
 const collide = (obj1, obj2) => {
+    // すべてなくなったらゲームクリア
+    if (block.data.length === 0) {
+        alert('Game Clear');
+        if (confirm('もう一度遊びますか？')) {
+            init();
+        }
+        else {
+            alert('お疲れ様でした');
+        }
+    }
     return (obj1.x < obj2.x + obj2.width &&
         obj2.x < obj1.x + obj1.width &&
         obj1.y < obj2.y + obj2.height &&
