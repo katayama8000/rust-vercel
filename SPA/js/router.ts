@@ -11,13 +11,12 @@ const routes = {
   '/SPA/about/': '/SPA/pages/about.html',
   '/SPA/lorem/': '/SPA/pages/lorem.html',
   404: '/SPA/pages/404.html',
-};
+} as const;
+
+type Route = keyof typeof routes;
 
 const handleLocation = async () => {
-  const path = window.location.pathname as
-    | '/SPA/'
-    | '/SPA/about/'
-    | '/SPA/lorem/';
+  const path = window.location.pathname as Route;
   console.log('handleLocation', path);
   const route = routes[path] || routes[404];
   const html = await fetch(route).then((data) => data.text());
