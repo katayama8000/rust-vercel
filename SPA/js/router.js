@@ -1,33 +1,57 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 const route = (event) => {
     event = event || window.event;
-    console.log('route', event.target.href);
+    console.log('routeClicked', event.target.href);
     event.preventDefault();
     window.history.pushState({}, '', event.target.href);
+    historyLength();
+    historyState();
     handleLocation();
 };
+
 const routes = {
     '/SPA/': '/SPA/pages/index.html',
     '/SPA/about/': '/SPA/pages/about.html',
     '/SPA/lorem/': '/SPA/pages/lorem.html',
     404: '/SPA/pages/404.html',
 };
-const handleLocation = () => __awaiter(void 0, void 0, void 0, function* () {
-    const path = window.location.pathname;
+
+const handleLocation = async () => {
+    const path = window.location.pathname
     console.log('handleLocation', path);
     const route = routes[path] || routes[404];
-    const html = yield fetch(route).then((data) => data.text());
+    const html = await fetch(route).then((data) => data.text());
+    console.log('html', html);
+    historyLength();
+    historyState();
     document.getElementById('main-page').innerHTML = html;
+};
+
+
+// window.onpopstate = (event) => {
+//     const state = event.state;
+//     console.log(state)
+//     alert(state)
+//     handleLocation();
+// };
+
+window.addEventListener('popstate', function (event) {
+    const state = event.state;
+    alert(state.name)
+    console.log(state)
+    handleLocation();
 });
-window.onpopstate = handleLocation;
 window.route = route;
+console.log(window.route);
+
 handleLocation();
+
+
+const historyLength = () => {
+    console.log('length');
+    console.log(window.history.length);
+};
+
+const historyState = () => {
+    console.log('state');
+    console.log(window.history.state);
+};
