@@ -1,1 +1,1 @@
-const git = 'gitHub';
+const git = 'git';
