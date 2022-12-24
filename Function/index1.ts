@@ -12,3 +12,30 @@ let sum2 = countList.reduce((accumulator, currentValue) => {
 }, 0);
 
 console.log(sum3 === sum2);
+
+async function main1() {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('hello');
+      resolve('OK');
+    }, 1000);
+  });
+
+  console.log('world');
+}
+
+main1();
+
+function main2() {
+  new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('hello');
+      resolve('OK');
+    }, 2000);
+  }).then((message) => {
+    console.log('world');
+    console.log(message);
+  });
+}
+
+main2();
