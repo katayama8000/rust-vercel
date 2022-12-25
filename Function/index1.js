@@ -43,3 +43,11 @@ function main2() {
     });
 }
 main2();
+const { country, city } = { country: 'Japan', city: 'Tokyo' };
+let myFeelingLevel = 0;
+const locations = {
+    Japan: 'Tokyo',
+    America: 'New York',
+};
+myFeelingLevel = locations[country] === city ? 100 : 50;
+console.log(myFeelingLevel, locations[country]);
