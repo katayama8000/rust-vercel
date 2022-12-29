@@ -1,5 +1,7 @@
 "use strict";
 class Stack {
+    items;
+    count;
     constructor() {
         this.items = [];
         this.count = 0;

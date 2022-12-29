@@ -6,7 +6,7 @@ import aaa, { sayHello } from "./sample1";
 console.log(sayHello());
 console.log(aaa);
 import { dog } from "./sample1";
-const myDog1 = Object.assign({}, dog);
+const myDog1 = { ...dog };
 const myDog2 = {
     name: "dog",
     age: 3,

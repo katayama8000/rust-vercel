@@ -1,8 +1,6 @@
 "use strict";
 class Todo {
-    constructor() {
-        this.todo = [];
-    }
+    todo = [];
     addTodo(title) {
         this.todo.push({ id: this.todo.length + 1, title, isCompleted: false });
         this.render();
