@@ -3,21 +3,21 @@ function copy1<T>(value: T): T {
   return value;
 }
 
-const clone1 = copy1<string>("hello");
-const clone2 = copy1<{ name: "hello" }>({ name: "hello" });
+const clone1 = copy1<string>('hello');
+const clone2 = copy1<{ name: 'hello' }>({ name: 'hello' });
 const clone3 = copy1<number>(2);
-const clone4 = copy1<string>({ name: "hello" }.name);
+const clone4 = copy1<string>({ name: 'hello' }.name);
 
 //2
-function copy2<T extends { name: string; age: 20 }>(value: T): T {
+function copy2<T extends { name: 'hello'; age: 20 }>(value: T): T {
   return value;
 }
 
-const clone5 = copy2({ name: "hello", age: 20 });
+const clone5 = copy2({ name: 'hello', age: 20 });
 const clone6 = copy2({
-  name: "hello",
+  name: 'hello',
   age: 20,
-  country: [{ japan: "akita" }, { USA: "NY" }],
+  country: [{ japan: 'akita' }, { USA: 'NY' }],
 });
 
 type K = keyof { name: string; age: number };
@@ -36,9 +36,9 @@ class DataBase<T extends string | number | boolean> {
 }
 
 const stringDataBase = new DataBase<string>();
-stringDataBase.add("apple");
-stringDataBase.add("banana");
-stringDataBase.add("grape");
-stringDataBase.remove("banana");
+stringDataBase.add('apple');
+stringDataBase.add('banana');
+stringDataBase.add('grape');
+stringDataBase.remove('banana');
 
 console.log(stringDataBase.get());
