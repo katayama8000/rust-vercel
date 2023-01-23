@@ -1,3 +1,4 @@
 TS/**/*.js
 Git/**/*.js
 .yarn
+node_modules
