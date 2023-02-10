@@ -1,5 +1,5 @@
 TS/**/*.js
 Git/**/*.js
-Functions/**/*.js
+Function/**/*.js
 .yarn
 node_modules
