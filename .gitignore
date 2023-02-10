@@ -1,5 +1,6 @@
 TS/**/*.js
 Git/**/*.js
 Function/**/*.js
+tsyringe/**/*.js
 .yarn
 node_modules
