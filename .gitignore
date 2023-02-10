@@ -2,5 +2,6 @@ TS/**/*.js
 Git/**/*.js
 Function/**/*.js
 tsyringe/**/*.js
+NFT/**/*.js
 .yarn
 node_modules
