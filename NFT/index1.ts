@@ -16,3 +16,6 @@ console.log(fruits1.has('orange'));
 
 fruits1.clear();
 console.log(fruits1);
+
+const nameKama = 'カタヤマ';
+console.log(nameKama);
