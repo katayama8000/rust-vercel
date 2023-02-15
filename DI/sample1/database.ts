@@ -1,7 +1,7 @@
-import User, { IDatabase } from './user';
+import User from './user';
 
-export default class Database implements IDatabase {
+export default class Database {
   saveUser(user: User) {
-    console.log(`Saved ${user.userName}!`); // Saved yamada!
+    console.log(`Saved!! number:${user.userName} name:${user.userName}`); // Saved !! number:1 name:yamada
   }
 }

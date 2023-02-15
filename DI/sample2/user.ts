@@ -1,18 +1,9 @@
-import { injectable, inject } from 'tsyringe';
+import Database from './database';
 
-export interface IDatabase {
-  saveUser: (user: User) => void;
-}
-
-@injectable()
 export default class User {
   userId: number = 0;
   userName: string = '';
-
-  constructor(
-    @inject('IDatabase')
-    private database: IDatabase
-  ) {}
+  constructor(private database: Database) {}
 
   saveUser() {
     if (this.userId) {
