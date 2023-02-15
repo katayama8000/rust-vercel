@@ -1,5 +1,6 @@
 export {};
 
+// 一部だけ必須
 type SomeRequired<T, K extends keyof T> = Omit<T, K> & Required<Pick<T, K>>;
 
 type User = {
@@ -18,3 +19,11 @@ const adult: AdultUser = {
 };
 
 console.log(adult);
+
+type SomePartial<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
+type mailUser = SomePartial<User, 'mail'>;
+
+const mail: mailUser = {
+  name: 'テスト太郎',
+};
