@@ -1,7 +1,7 @@
 TS/**/*.js
 Git/**/*.js
 Function/**/*.js
-DI/**/*.js
+D-tech/**/*.js
 NFT/**/*.js
 .yarn
 node_modules
