@@ -1,9 +1,9 @@
-### TSに変更があり次第JSにコンパイル(globalにTSがインストールされている場合)
+### TSに変更があり次第JSにコンパイル
 ```bash
 tsc --watch
 ```
 
-### local
+### yarn
 ```bash
 yarn tsc
 ```
