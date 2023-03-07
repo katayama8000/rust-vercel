@@ -18,6 +18,18 @@ class Human implements IHuman {
   }
 }
 
+class American implements IHuman {
+  constructor() {}
+
+  greet(): void {
+    console.log('Hi.');
+  }
+
+  introduce(): void {
+    console.log('I am an American.');
+  }
+}
+
 @injectable()
 class Japanese {
   // IHumanをコンストラクタインジェクションする
@@ -42,10 +54,20 @@ container.register('JAPANESE', {
   useClass: Japanese,
 });
 
+// コンテナにクラスを登録
+container.register('AMERICAN', {
+  useClass: American,
+});
+
 // インスタンスを取得する
 const japanese = container.resolve<Japanese>('JAPANESE').greet();
 
 // test
-// const human = container.resolve<Human>('HUMAN');
-// human.greet();
-// human.introduce();
+const human = container.resolve<Human>('HUMAN');
+human.greet();
+human.introduce();
+
+// test
+const american = container.resolve<American>('AMERICAN');
+american.greet();
+american.introduce();
