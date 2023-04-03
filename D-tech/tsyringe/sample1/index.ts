@@ -5,6 +5,7 @@ interface IBar {
   greet(): void;
 }
 
+@injectable()
 class Bar implements IBar {
   constructor() {}
 
@@ -24,7 +25,7 @@ class Foo {
 }
 
 // コンテナにクラスを登録
-container.register('BAR', {
+container.register<IBar>('BAR', {
   useClass: Bar,
 });
 
