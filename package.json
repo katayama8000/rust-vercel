@@ -20,7 +20,7 @@
   "homepage": "https://github.com/katayama8000/TypeScript-Playground#readme",
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "typescript": "^4.9.4"
+    "typescript": "4.9.5"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.13",
