@@ -47,3 +47,29 @@ type U<T> = T extends UserA ? number : string;
 type A1 = U<UserA>; // number
 type B2 = U<UserB>; // string
 type C3 = U<UserC>; // number
+
+// 足し算する関数
+const add = (a: number, b: number): number => a + b;
+
+// 引き算する関数
+const sub = (a: number, b: number): number => a - b;
+
+// 掛け算する関数
+const mul = (a: number, b: number): number => a * b;
+
+// 割り算する関数
+const div = (a: number, b: number): number => a / b;
+
+// blobをbase64に変換する関数
+const blobToBase64 = (blob: Blob): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = () => {
+      resolve(reader.result as string);
+    };
+    reader.onerror = (error) => {
+      reject(error);
+    };
+  });
+};
