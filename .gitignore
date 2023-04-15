@@ -5,3 +5,4 @@ D-tech/**/*.js
 NFT/**/*.js
 .yarn
 node_modules
+.DS_Store
