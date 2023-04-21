@@ -73,3 +73,34 @@ const blobToBase64 = (blob: Blob): Promise<string> => {
     };
   });
 };
+
+interface UserInterface {
+  name: string;
+  age: number;
+  sex?: 'man' | 'woman';
+  family?: {
+    brother?: {
+      name: string;
+      age: number;
+    };
+    sister?: {
+      name: string;
+      age: number;
+    };
+  };
+}
+
+const userforinterface: UserInterface = {
+  name: 'bob',
+  age: 20,
+  family: {
+    brother: {
+      name: 'tom',
+      age: 25,
+    },
+  },
+};
+
+const isBrotherAdult = (user: UserInterface): boolean => {
+  return user.family?.brother?.age! >= 20;
+};
