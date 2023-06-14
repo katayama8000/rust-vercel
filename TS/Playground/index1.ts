@@ -126,3 +126,64 @@ function getMonth(date: string | Date) {
     console.log(date.getMonth() + 1);
   }
 }
+
+interface Square {
+  kind: 'square';
+  size: number;
+}
+
+interface Rectangle {
+  kind: 'rectangle';
+  width: number;
+  height: number;
+}
+
+interface Circle {
+  kind: 'circle';
+  radius: number;
+}
+
+type Shape = Square | Rectangle | Circle;
+
+function area(shape: Shape): number {
+  switch (shape.kind) {
+    case 'square':
+      return shape.size * shape.size;
+    case 'rectangle':
+      return shape.width * shape.height;
+    case 'circle':
+      return Math.PI * shape.radius ** 2;
+    default:
+      throw new Error('Invalid shape!');
+  }
+}
+
+function isSquare(shape: Shape): shape is Square {
+  return shape.kind === 'square';
+}
+
+const square: Square = { kind: 'square', size: 5 };
+const rectangle: Rectangle = { kind: 'rectangle', width: 5, height: 10 };
+const circle: Circle = { kind: 'circle', radius: 5 };
+
+console.log(area(square)); // Output: 25
+console.log(area(rectangle)); // Output: 50
+console.log(area(circle)); // Output: 78.53981633974483
+
+console.log(isSquare(square)); // Output: true
+console.log(isSquare(rectangle)); // Output: false
+console.log(isSquare(circle)); // Output: false
+
+const isString = (test: unknown): test is string => {
+  return typeof test === 'string';
+};
+
+const example = (foo: unknown) => {
+  if (isString(foo)) {
+    console.log(foo.length); // Error fooはまだunknownとして推論される
+  }
+};
+
+const isNumber = (val: unknown): val is number => {
+  return typeof val === 'number';
+};
