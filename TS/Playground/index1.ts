@@ -104,3 +104,25 @@ const userforinterface: UserInterface = {
 const isBrotherAdult = (user: UserInterface): boolean => {
   return user.family?.brother?.age! >= 20;
 };
+
+// learn instanceof
+
+class Person1 {
+  constructor(public name: string, public age: number) {}
+}
+
+class Person2 {
+  constructor(public name: string, public age: number) {}
+}
+
+const person1 = new Person1('bob', 20);
+const person2 = new Person2('tom', 25);
+
+console.log(person1 instanceof Person1); // true
+console.log(person1 instanceof Person2); // false
+
+function getMonth(date: string | Date) {
+  if (date instanceof Date) {
+    console.log(date.getMonth() + 1);
+  }
+}

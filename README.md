@@ -7,3 +7,8 @@ yarn tsc --watch
 ```bash
 yarn tsc
 ```
+
+### ts-nodeで実行
+```bash
+yarn ts-node src/index.ts
+```
