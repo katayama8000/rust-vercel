@@ -10,5 +10,5 @@ yarn tsc
 
 ### ts-nodeで実行
 ```bash
-yarn ts-node src/index.ts
+npx ts-node src/index.ts
 ```
