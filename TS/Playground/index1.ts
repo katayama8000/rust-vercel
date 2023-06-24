@@ -5,11 +5,11 @@ const f1 = <T>(arg: T): T => arg;
 console.log(f1<number>(10));
 console.log(f1<string>('Hello'));
 
-interface User {
+interface TUser {
   name: string;
 }
 
-interface Admin extends User {
+interface Admin extends TUser {
   isMaster: boolean;
 }
 

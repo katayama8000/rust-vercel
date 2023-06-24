@@ -1,4 +1,4 @@
-class FUser {
+class FUserClass {
   constructor(
     private readonly _id: string,
     private _lastName: string,
@@ -16,8 +16,8 @@ class FUser {
   }
 }
 
-const fUser = new FUser('1', 'テスト', '太郎');
+const fUserClass = new FUserClass('1', 'テスト', '太郎');
 
-console.log(FUser);
-console.log(typeof FUser);
-console.log(typeof fUser);
+console.log(FUserClass);
+console.log(typeof FUserClass);
+console.log(typeof fUserClass)
