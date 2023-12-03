@@ -8,7 +8,7 @@ fn handler(_: Request) -> Result<impl IntoResponse, VercelError> {
 		.header("Content-Type", "text/plain")
 		.body("user endpoint")
 		.expect("Internal Server Error");
-
+	
 		Ok(response)
 }
 

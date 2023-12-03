@@ -5,7 +5,7 @@ authors = [ "usa <usagrada@users.noreply.github.com>" ]
 edition = "2018"
 
 [dependencies]
-http = "0.1"
+http = "1.0.0"
 vercel_lambda = "*"
 
 [[bin]]
