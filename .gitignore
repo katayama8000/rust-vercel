@@ -1,8 +1,4 @@
-TS/**/*.js
-Git/**/*.js
-Function/**/*.js
-D-tech/**/*.js
-NFT/**/*.js
-.yarn
+/target
+
+.vercel
 node_modules
-.DS_Store

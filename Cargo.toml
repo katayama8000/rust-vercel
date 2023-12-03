@@ -1,0 +1,13 @@
+[package]
+name = "now-rust-example"
+version = "0.1.0"
+authors = [ "usa <usagrada@users.noreply.github.com>" ]
+edition = "2018"
+
+[dependencies]
+http = "0.1"
+vercel_lambda = "*"
+
+[[bin]]
+name = "main"
+path = "/Users/yu/mydir/program/rust/actix-web-yewapp/now-rust-example/api/main.rs"
