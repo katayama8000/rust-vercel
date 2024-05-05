@@ -1,0 +1,23 @@
+{
+  "dockerComposeFile": [
+    "compose.yml"
+  ],
+  "service": "rust-vercel",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "ms-azuretools.vscode-docker",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates"
+      ],
+      "settings": {
+        "files.watcherExclude": {
+          "**/target/**": true
+        }
+      }
+    }
+  }
+}
