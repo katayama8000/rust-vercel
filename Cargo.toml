@@ -10,5 +10,5 @@ serde_json = { version = "1", features = ["raw_value"] }
 vercel_runtime = { version = "1.1.0" }
 
 [[bin]]
-name = "main"
+name = "handler"
 path = "api/handler.rs"
