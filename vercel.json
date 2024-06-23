@@ -3,5 +3,11 @@
     "api/**/*.rs": {
       "runtime": "vercel-rust@4.0.7"
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/handler",
+      "schedule": "0 0 0 * *"
+    }
+  ]
 }
