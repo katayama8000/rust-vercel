@@ -8,6 +8,9 @@ edition = "2021"
 tokio = { version = "1", features = ["macros"] }
 serde_json = { version = "1", features = ["raw_value"] }
 vercel_runtime = { version = "1.1.0" }
+hyper = { version = "1", features = ["full"] }
+http-body-util = "0.1"
+hyper-util = { version = "0.1", features = ["full"] }
 
 [[bin]]
 name = "handler"
