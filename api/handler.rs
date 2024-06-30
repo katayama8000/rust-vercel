@@ -19,8 +19,14 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     let key1 = json_body["key1"].as_str().unwrap_or("N/A");
     let key2 = json_body["key2"].as_str().unwrap_or("N/A");
 
+    // 配列の要素を取り出す
+    let key_array = json_body["key_array"]
+        .as_array()
+        .expect("key_array is not an array");
+
     println!("key1: {}", key1);
     println!("key2: {}", key2);
+    println!("key_array: {:?}", key_array);
 
     Ok(Response::builder()
         .status(StatusCode::OK)
@@ -28,7 +34,9 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
         .body(
             json!({
                 "message": "Hello from Rust!",
-                "body": body,
+                "key1": key1,
+                "key2": key2,
+                "key_array": key_array,
             })
             .to_string()
             .into(),
