@@ -11,9 +11,7 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     let body_str = String::from_utf8(body.to_vec()).unwrap();
 
     // JSONとしてパース
-    let json_body: Value = serde_json::from_str(&body_str).unwrap();
-
-    println!("body: {}", json_body.to_string());
+    let json_body: Value = serde_json::from_str(&body_str).map_err(|e| Error::from(e))?;
 
     // key1とkey2を取り出す
     let key1 = json_body["key1"].as_str().unwrap_or("N/A");
@@ -22,7 +20,13 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     // 配列の要素を取り出す
     let key_array = json_body["key_array"]
         .as_array()
-        .expect("key_array is not an array");
+        .map(|array| {
+            array
+                .iter()
+                .map(|value| value.as_str().unwrap_or("N/A"))
+                .collect::<Vec<&str>>()
+        })
+        .unwrap_or(vec!["N/A"]);
 
     println!("key1: {}", key1);
     println!("key2: {}", key2);
