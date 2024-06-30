@@ -16,8 +16,8 @@ pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
     println!("body: {}", json_body.to_string());
 
     // key1とkey2を取り出す
-    let key1 = json_body["body"]["key1"].as_str().unwrap_or("N/A");
-    let key2 = json_body["body"]["key2"].as_str().unwrap_or("N/A");
+    let key1 = json_body["key1"].as_str().unwrap_or("N/A");
+    let key2 = json_body["key2"].as_str().unwrap_or("N/A");
 
     println!("key1: {}", key1);
     println!("key2: {}", key2);
