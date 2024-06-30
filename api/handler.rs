@@ -6,13 +6,15 @@ async fn main() -> Result<(), Error> {
     run(handler).await
 }
 
-pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
+pub async fn handler(req: Request) -> Result<Response<Body>, Error> {
+    let body = req.body();
     Ok(Response::builder()
         .status(StatusCode::OK)
         .header("Content-Type", "application/json")
         .body(
             json!({
-              "message": "Hello world"
+                "message": "Hello from Rust!",
+                "body": body,
             })
             .to_string()
             .into(),
